@@ -1,0 +1,9 @@
+<div>
+  <h1>Sales</h1>
+  <div *ngFor="let sale of sales">
+    <h2>Sale ID: {{ sale.id }}</h2>
+    <p>Date: {{ sale.createdAt }}</p>
+  </div>
+
+  <button (click)="generateReport()">Generate Sales Report</button>
+</div>

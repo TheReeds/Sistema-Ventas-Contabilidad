@@ -1,0 +1,14 @@
+<div>
+  <h1>Pre-Purchase Details</h1>
+  <div *ngFor="let item of prePurchase.Products">
+    <h2>{{ item.name }}</h2>
+    <p>Quantity: {{ item.PrePurchaseProduct.quantity }}</p>
+    <p>Subtotal: {{ (item.price - (item.Discount ? item.Discount.discountValue : 0)) * item.PrePurchaseProduct.quantity }}</p>
+  </div>
+
+  <div>
+    <h2>Total: {{ prePurchase.total }}</h2>
+    <button (click)="finalizePurchase()">Finalize Purchase</button>
+    <a [href]="prePurchase.pdfUrl" target="_blank">Download PDF</a>
+  </div>
+</div>
